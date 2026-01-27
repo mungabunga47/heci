@@ -1,0 +1,32 @@
+/* Resmin etrafındaki container */
+.image-container {
+  position: relative !important;
+  display: block !important;
+  border: none !important; /* Tüm çerçeveleri kesinlikle kaldır */
+  outline: none !important; /* Odak çerçevesini kaldır */
+  box-shadow: none !important; /* Gölgeleri kaldır */
+}
+/* TD elementi için ekstra önlem */
+td[background="ilk.jpg"] {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* Koordinat çizgileri */
+.coordinate-line {
+  position: absolute;
+  background-color: white;
+  pointer-events: none;
+  z-index: 9997;
+
+}
+.horizontal-line {
+  height: 1px;
+   left: 0;
+}
+.vertical-line {
+  width: 1px;
+
+
+  top: 0;
+}

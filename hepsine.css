@@ -1,0 +1,25 @@
+/* Ana Container */
+.hakkimda-container {
+  position: relative !important;
+  display: block !important;
+  overflow: hidden;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Çizgiler */
+.hakkimda-line {
+  position: absolute;
+  background-color: WHITE;
+  pointer-events: none;
+  z-index: 9997;
+  display: none;
+}
+.hakkimda-line.horizontal {
+  height: 1px;
+  left: 0;
+}
+.hakkimda-line.vertical {
+  width: 1px;
+  top: 0;
+}
