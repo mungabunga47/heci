@@ -124,21 +124,21 @@
             width: 0; 
             background-color: #8eb7cb;
             text-align: right; 
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
             overflow: hidden; 
             white-space: nowrap; 
-          transition: width 0.4s ease, opacity 0.8s ease; 
+          transition: width 0.4s ease, opacity 0.7s ease; 
             opacity: 0; 
             pointer-events: none; 
         }
         .dropdownLink {
             display: block;
             padding: 5px;
-            font-size: 10px;
+            font-size: 10.5px;
             color: white;
             text-decoration: none;
             opacity: 0; 
-            transition: opacity 0.4s ease; 
+  transition: width 0.5s ease, opacity 0.9s ease; 
         }
         .dropdownLink:hover {
             background-color: #A8A8A8;
@@ -178,7 +178,7 @@
             dropdownMenu.style.opacity = "6";
             timeoutId = setTimeout(() => {
                 dropdownMenu.style.transform = "translateX(0)";
-            }, 500); 
+            }, 600); 
         });
         document.getElementById("dropdownMenu").addEventListener("mouseenter", function() {
             clearTimeout(timeoutId);
@@ -188,7 +188,7 @@
             dropdownMenu.style.opacity = "1";
             timeoutId = setTimeout((1) => {
                 dropdownMenu.style.transform = "translateX(0)";
-            }, 500);
+            }, 600);
         });
     </script>
 
