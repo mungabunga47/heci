@@ -124,7 +124,7 @@
 										</tr>
 										<tr>
 											<td  valign="top" width="700" height="119">
-<div style="margin-left:14px; margin-top:2px "><div style class="a_gray" title="Designed by IHG">© 2025 <b>ismailhakkiguler</b>.com<br></div>| <a href="in6gizlilik.htm" title="Gizlilik Politikası" class="a_gray" onmouseover="this.style.color='gray';"  onmouseout="this.style.color='#A8A8A8'"><b>Gizlilik Politikası </b></a>| <a href="in9sitemap.htm" title="Site Haritası" class="a_gray" onmouseover="this.style.color='gray';"  onmouseout="this.style.color='#A8A8A8'">Site Haritası</a> |<br></div>
+<div style="margin-left:14px; margin-top:2px "><div style class="a_gray" title="Designed by IHG">© 2025 <b>ismailhakkiguler</b>.com<br></div>| <a href="in6gizlilik.htm" title="Gizlilik Politikası" class="a_gray" onmouseover="this.style.color='gray';"  onmouseout="this.style.color='8eb7cb'"><b>Gizlilik Politikası </b></a>| <a href="in9sitemap.htm" title="Site Haritası" class="a_gray" onmouseover="this.style.color='gray';"  onmouseout="this.style.color='#A8A8A8'">Site Haritası</a> |<br></div>
 											</td>
 										</tr>
 									</table>
@@ -137,23 +137,25 @@
 
 
 <script>
-    document.getElementById('shareButton').addEventListener('click', function(event) {
-        event.preventDefault(); 
-        if (navigator.share) {
-            navigator.share({
-                title: 'www.ismailhakkiguler.com',
-                text: 'İsmail Hakkı GÜLER - Kişisel Web Sitesi',
-                url: window.location.href 
-            })
-            .then(() => {
-                console.log('Başarıyla paylaşıldı!');
-            })
-            .catch((error) => {
-                console.error('Paylaşılamadı:', error);
-            });
-        } else {
-            alert('Bu tarayıcı paylaşım özelliğini desteklemiyor.');
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('shareButton').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            if (navigator.share) {
+                navigator.share({
+                    title: 'www.ismailhakkiguler.com',
+                    text: 'İsmail Hakkı GÜLER - Kişisel Web Sitesi',
+                    url: window.location.href 
+                })
+                .then(() => {
+                    console.log('Başarıyla paylaşıldı!');
+                })
+                .catch((error) => {
+                    console.error('Paylaşılamadı:', error);
+                });
+            } else {
+                alert('Bu tarayıcı paylaşım özelliğini desteklemiyor.');
+            }
+        });
     });
 </script>
 

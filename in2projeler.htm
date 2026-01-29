@@ -144,23 +144,25 @@
 </table>
 
 <script>
-    document.getElementById('shareButton').addEventListener('click', function(event) {
-        event.preventDefault(); 
-        if (navigator.share) {
-            navigator.share({
-                title: 'www.ismailhakkiguler.com',
-                text: 'İsmail Hakkı GÜLER - Kişisel Web Sitesi',
-                url: window.location.href 
-            })
-            .then(() => {
-                console.log('Başarıyla paylaşıldı!');
-            })
-            .catch((error) => {
-                console.error('Paylaşılamadı:', error);
-            });
-        } else {
-            alert('Bu tarayıcı paylaşım özelliğini desteklemiyor.');
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('shareButton').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            if (navigator.share) {
+                navigator.share({
+                    title: 'www.ismailhakkiguler.com',
+                    text: 'İsmail Hakkı GÜLER - Kişisel Web Sitesi',
+                    url: window.location.href 
+                })
+                .then(() => {
+                    console.log('Başarıyla paylaşıldı!');
+                })
+                .catch((error) => {
+                    console.error('Paylaşılamadı:', error);
+                });
+            } else {
+                alert('Bu tarayıcı paylaşım özelliğini desteklemiyor.');
+            }
+        });
     });
 </script>
 
