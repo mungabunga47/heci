@@ -1,0 +1,99 @@
+<html>
+<head>
+<html lang="tr">
+<meta charset="UTF-8">
+<title>IHG-İletişim</title>
+<link rel="stylesheet" href="semettok.css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<font face="tahoma">
+<font size="1" class="a_blue_l">
+
+<B><H3>İLETİŞİM</B></H3>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+
+Görüş veya önerileriniz için anasayfada bulunan (FB, X, IN) sosyal medya profillerime girerek benimle iletişime geçebilirsiniz. Ya da aşağıdaki formu kullanarak e-posta adresime mesaj gönderebilirsiniz.
+
+
+<br><br>
+
+<form action="send_contact.php" method="POST" autocomplete="off">
+    <label>Ad Soyad</label><br>
+    <input type="text" name="full_name" required><br>
+
+    <label>E-posta</label><br>
+    <input type="email" name="email" required><br>
+
+    <label>Telefon</label><br>
+    <input type="tel" name="phone" required><br>
+
+    <label>Mesaj</label> (200 karakter)<br>
+   <textarea id="message" name="message" rows="6" cols="50" style="width: 72%; height: 70px; resize: none;" required></textarea>
+
+ <div id="charWarn" style="color: red; display: none; margin-top: 6px;">
+    200 karakter sınırını aştınız. Lütfen mesajınızı kısaltın.
+  </div>
+
+     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"><br>
+
+    <button type="submit">Gönder</button>
+<button type="reset" id="SilDugme" style="margin-left: 8px;">Temizle</button>
+  </form>
+<script>
+  
+  const textarea = document.getElementById('message');
+  const warn = document.getElementById('charWarn');
+  const SilDugme = document.getElementById('SilDugme');
+  textarea.addEventListener('input', function() {
+    const len = this.value.length;
+
+    if (len > 200) {
+    
+      this.value = this.value.substring(0, 200);
+      warn.style.display = 'block';
+    } else {
+      warn.style.display = 'none';
+    }
+  });
+  SilDugme.addEventListener('click', function() {
+    setTimeout(() => {
+      textarea.value = textarea.value.substring(0, 0);
+      warn.style.display = 'none';
+    }, 0);
+  });
+
+</script>
+
+
+Harita Konumu
+
+<div style="width:100%; height:100px;">
+  <iframe
+    width="200"
+    height="85"
+    frameborder="1" style="border:1"
+    src="https://www.google.com/maps?q=37.183778,40.597819&hl=tr&z=15&output=embed"
+    allowfullscreen>
+  </iframe>
+</div>
+<strong>Adres:</strong><BR>
+Mardin/Kızıltepe<br>
+47400<br>
+
+
+
+
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+</head>
+</body>

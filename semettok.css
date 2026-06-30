@@ -1,0 +1,28 @@
+html, body {
+  height: auto;         
+  min-height: 100%;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8eb7cb #e6e2e2;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8eb7cb;
+  border-radius: 10px;
+}
+html {
+  scrollbar-color: #8eb7cb #e6e2e2;
+}
+
+body {
+  min-height: 200vh;      
+  margin: 0;
+  background-color: white;
+  -webkit-overflow-scrolling: touch; 
+  overflow: auto;  
+}

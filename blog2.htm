@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(postIndex, btn) {
+ 
+  btn.textContent = "Beğenildi";
+
+  btn.disabled = true;
+}
+</script>
+
+
+  <div class="container">
+  <article class="blog-post">
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+            <h3 class="blog-title">Blog Yazısı Başlığı 6</h3>
+            <p class="date">Yayın Tarihi: 25 Ekim 2023 16:45</p>
+            <p class="blog-summary" id="summary6">
+                Üçüncü blog yazısının içeriği, soyut konulardan somut örneklere geçiş yapmaktadır.
+                <span id="dots6">...</span><span id="more6" style="display:none;"> Daha fazla içerik için bekleyin. Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary6')">Devamını Gör</button>
+               <button class="like-button" onclick="handleLike(6, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(6)">Paylaş</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Blog Yazısı Başlığı 7</h3>
+            <p class="date">Yayın Tarihi: 25 Ekim 2023 16:45</p>
+            <p class="blog-summary" id="summary7">
+                Üçüncü blog yazısının içeriği, soyut konulardan somut örneklere geçiş yapmaktadır.
+                <span id="dots7">...</span><span id="more7" style="display:none;"> Daha fazla içerik için bekleyin. Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary7')">Devamını Gör</button>
+                <button class="like-button" onclick="handleLike(7, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(7)">Paylaş</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Blog Yazısı Başlığı 8</h3>
+            <p class="date">Yayın Tarihi: 25 Ekim 2023 16:45</p>
+            <p class="blog-summary" id="summary8">
+                Üçüncü blog yazısının içeriği, soyut konulardan somut örneklere geçiş yapmaktadır.
+                <span id="dots8">...</span><span id="more8" style="display:none;"> Daha fazla içerik için bekleyin. Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary8')">Devamını Gör</button>
+                <button class="like-button" onclick="handleLike(8, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(8)">Paylaş</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Blog Yazısı Başlığı 9</h3>
+            <p class="date">Yayın Tarihi: 25 Ekim 2023 16:45</p>
+            <p class="blog-summary" id="summary9">
+                Üçüncü blog yazısının içeriği, soyut konulardan somut örneklere geçiş yapmaktadır.
+                <span id="dots9">...</span><span id="more9" style="display:none;"> Daha fazla içerik için bekleyin. Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary9')">Devamını Gör</button>
+                <button class="like-button" onclick="handleLike(9, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(9)">Paylaş</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Blog Yazısı Başlığı 10</h3>
+            <p class="date">Yayın Tarihi: 25 Ekim 2023 16:45</p>
+            <p class="blog-summary" id="summary0">
+                Üçüncü blog yazısının içeriği, soyut konulardan somut örneklere geçiş yapmaktadır.
+                <span id="dots0">...</span><span id="more0" style="display:none;"> Daha fazla içerik için bekleyin. Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary0')">Devamını Gör</button>
+                <button class="like-button" onclick="handleLike(0, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(0)">Paylaş</button>
+            </div>
+        </article>
+
+
+
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm">1</a>/<a href="blog2.htm">2</a></center>
+</body>
+</html>

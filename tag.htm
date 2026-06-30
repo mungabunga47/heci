@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ISMAILHAKKIGULER.COM - Kişisel Web Sitesi</title>
+  <style>
+    body {
+      font-family: sans-serif;
+  
+    }
+
+    .tagcloud--item {
+     
+
+      border: 1;
+ font-size: 9px !important; 
+
+      color: silver; 
+      cursor: pointer;
+      transition: color 0.8s ease;
+      text-decoration: none;
+      display: inline-block;
+    }  
+            .tagcloud--item:hover {
+            background-color: rgba(0, 0, 0, .1);
+            border: 1px 
+            -webkit-border-radius: 1px;
+
+            -moz-border-radius: 5px;
+            border-radius: 8px;
+
+            opacity: 1 !important;
+            z-index: 9999 !important;
+
+    
+      text-decoration: none;
+    }
+
+    .content {
+      display: inline-block;
+      margin: -44px;
+  position: fixed; 
+  top: 1px;        
+  left: 1px;       
+   
+    }
+
+    ul {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+     
+    }
+
+    a {
+     
+      text-decoration: none;
+
+    }
+
+    a:hover {
+      text-decoration: underline;
+    
+    }
+
+      .tagcloud--item:hover {
+   color: #8eb7cb;
+
+    }
+  
+        .light .tagcloud--item:hover {
+
+     
+
+        }
+  </style>
+
+</head>
+
+<body>
+  <div class="content">
+   
+  </div>
+
+  <script type="text/javascript" src="Tag.js"></script>
+<script>
+  var texts = [
+    'Blog', 'AI', 
+'İsmail', 'Hakkı', 'Güler', 'Helen', 'H4cker', 
+ 'Crack', 'IHG', 'Game', 'Programmer', 'Software',
+  ];
+
+  var tagCloudContainer = document.querySelector('.content');
+  var tc = TagCloud(tagCloudContainer, texts, {
+  });
+   tagCloudContainer.addEventListener('click', function() 
+   { window.open('in3blog.htm', '_parent'); //  }); console.log(tc); 
+    });
+
+  console.log(tc);
+</script>
+
+
+
+
+<script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+</body>
+
+</html>
