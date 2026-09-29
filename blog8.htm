@@ -1,0 +1,235 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(_0x4b78x1,_0x4b78x2){_0x4b78x2['textContent']="Be\u011fenildi",_0x4b78x2['disabled']=!0}
+</script>
+
+
+
+  <div class="container">
+  <article class="blog-post">
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+            <h3 class="blog-title">Yıldızlararası Zihin ve Evrensel Gerçeklik</h3>
+            <p class="date">Yayın Tarihi: 23 Ekim 2025</p>
+            <p class="blog-summary" id="summary6">
+                Aklımızın ve düşünce yönergemizin artık bir köyün, bir şehrin, hatta tek bir gezegenin dar kıstaslarına göre sınırlandırılmaması gerektiğine inanıyorum. İnsanlık olarak artık yıldızlararası bir düşünce modeline ve algısına sahip olmak, olabildiğince evrenselleşmek zorundayız. 
+                <span id="dots6">...</span><span id="more6" style="display:none;"> Ailemizin, bölgemizin veya ülkemizin kendine has bir realitesi olsa da, bu yerel gerçekliği ancak evrenin ve dünyanın büyük realitesine göre ölçülebilir kıldığımızda doğru anlayabiliriz. Kendi konumumuzu doğru okuyabilmek için zihnimizin yükselmesi ve beynimizin daha aktif çalışması şarttır. Zihin yükseldikten sonra bakış açımız genişler ve her türlü dar kalıptan, tasvirden soyutlanırız. Bu genişleyen vizyon sayesinde, tüm insanlığın faydasına olacak iyi niyetli amelleri ve adımları çok daha doğru bir şekilde analiz etme şansına sahip oluruz.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary6')">Devamı</button>
+               <button class="like-button" onclick="handleLike(6, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(6)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Kalbin Dekoderi ve Sezgisel Görüş</h3>
+            <p class="date">Yayın Tarihi: 13 Ekim 2025</p>
+            <p class="blog-summary" id="summary7">
+                Bir insanı gerçekten dinlemeye başladığımda, kulaklardan kalbe doğru bir geçiş gerçekleştiğini fark ettim. Bu aşamada artık çınlayan sözlerin ötesine geçer, zihni ve kalbi dinlemeye başlarsınız; kişiliğiniz adeta bir dekodere, bir çeviriciye dönüşür. Bakış açısı da böyledir; bir şeye dışarıdan içeriye doğru nüfuz ederek baktığınızda gözlerin hükmü kalkar, aklın ve zihnin bakışı devreye girer.
+                <span id="dots7">...</span><span id="more7" style="display:none;"> Bunu beynin bilinen sınırlarından %40’lık bir çalışma dilimine yükseliş olarak görebiliriz. Duymayı ve görmeyi evrensel bir eyleme dönüştürdüğünüzde, yerini daha sezgisel bir görüş alır. Farklı boyutların birbiriyle çakışan algıları sayesinde, uzak zamansal ve mekânsal mesafeleri zihninizin içinde iç içe geçmiş görüntüler halinde görmeye başlarsınız. Derinden hissetmek ve sezmek, varlığınızın çok daha büyük bir ölçekte açığa çıkması demektir.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary7')">Devamı</button>
+                <button class="like-button" onclick="handleLike(7, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(7)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Kalp Derinliği ve Görüş Ufku</h3>
+            <p class="date">Yayın Tarihi: 04 Eylül 2025</p>
+            <p class="blog-summary" id="summary8">
+                Büyük bir insanın; küçük insanlara ait pek çok gafı, yersiz ifadeyi, duygusal taşkınlığı ve gereksiz söylemi kendi düşüncesinde eritebildiğine ve her şeye rağmen insanlara hoşgörüyle bakabildiğine şahit oldum. Lakin küçük insanların böyle bir şansı yoktur. Onlar kendi küçük dünyalarının, kinlerinin, hırslarının, egolarının ve nefretlerinin içinde kaybolup giderler. 
+                <span id="dots8">...</span><span id="more8" style="display:none;"> Bu kayboluş, insanın baktığı dünyaya karşı körleşmesinden ve görüş alanını daraltmasından başka bir şey değildir. Şunu çok iyi anladım ki, insanın kalp derinliği ne kadar büyükse görüş ufku da o kadar büyüktür. İnsan göremediği, algılayamadığı bir alanda asla söz ve kontrol sahibi olamaz. Bu yüzden nefretini aşanlar ve duygularının üstüne çıkabilenler, hayatta her zaman bir adım önde olurlar.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary8')">Devamı</button>
+                <button class="like-button" onclick="handleLike(8, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(8)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Duru Su ve Yıldızların Yansıması</h3>
+            <p class="date">Yayın Tarihi: 14 Ağustos 2025</p>
+            <p class="blog-summary" id="summary9">
+                Şahsi düşüncelerimiz hayat görüntüsünü kalıcı olarak bulandıramaz, en fazla bir anlık dalgalandırır. Nesnel düşüncelerdeki o mutlak netlik, dünyaya ve evrene önyargısız bakabilmekten gelir. Algılarımız; şartlanmalarımızdan ve "öyle sanma" felsefemizden ne kadar uzaksa, o kadar berraktır. 
+                <span id="dots9">...</span><span id="more9" style="display:none;"> Bilirim ki bulanık suda yıldızların yansıması belirmez; orada belirecek olan şey sadece anlamsız ve karışık karaltılardır. Zihnimiz ne kadar duru ise his, akıl ve kalbimizdeki evrensel görüntüler de o derece netlik arz eder. İşte bu duruluğun ve çıplak gerçeği görebilmenin diğer adı doğruluktur.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary9')">Devamı</button>
+                <button class="like-button" onclick="handleLike(9, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(9)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Sınırsız Zamanın Gecesi ve Büyük Karanlık</h3>
+            <p class="date">Yayın Tarihi: 25 Temmuz 2025</p>
+            <p class="blog-summary" id="summary0">
+                İlkel bir mağara adamının bilincinden daha ötesine geçmeye çalıştığımda karanlık bir dehlizle karşılaşıyorum. Gittiğim o derin yere dair hatırladığım tek şey büyük bir hiçlik; çünkü bu dünyanın hiçbir rengi, ölçüsü, kelimesi veya duygusu orayı tasvir etmeye yetmiyor.
+                <span id="dots0">...</span><span id="more0" style="display:none;"> Dünyevi ögeler içeren sıradan rüyaları uyandığımızda tüm detaylarıyla hatırlarız. Ancak tüm bu dünyevi formların ötesinde bir rüya gördüğümüzde, bilincimize geri dönen tek şey derin bir karanlıktır. Çok iyi anladım ki, Arthur Schopenhauer'un da dediği gibi, uyanıkken yaşadığımız bu hayatın kısa rüyasına karşılık, o sınırsız zamanın gecesi çok daha uzundur.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary0')">Devamı</button>
+                <button class="like-button" onclick="handleLike(0, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(0)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+<script>
+function generateAndOpenRSS() {
+    const currentUrl = window.location.href;
+    let xmlString = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n`;
+    xmlString += `  <title>İsmail Hakkı GÜLER'in Kişisel Blogu</title>\n`;
+    xmlString += `  <link>${currentUrl}</link>\n`;
+    xmlString += `  <description>Hayata dair düşünceler ve özgür düşünceler.</description>\n`;
+    xmlString += `  <language>tr-tr</language>\n`;
+
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+        const title = post.querySelector('.blog-title').innerText.trim();
+        const dateText = post.querySelector('.date').innerText.replace('Yayın Tarihi:', '').trim();
+        const summaryElement = post.querySelector('.blog-summary');
+        
+      
+        let fullDescription = summaryElement.innerText.replace('...', '').trim();
+
+        xmlString += `  <item>\n`;
+        xmlString += `    <title>${title}</title>\n`;
+        xmlString += `    <link>${currentUrl}</link>\n`;
+        xmlString += `    <description><![CDATA[${fullDescription}]]></description>\n`;
+        xmlString += `    <pubDate>${dateText}</pubDate>\n`;
+        xmlString += `  </item>\n`;
+    });
+
+    xmlString += `</channel>\n</rss>`;
+
+
+    const blob = new Blob([xmlString], { type: 'application/xml' });
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+}
+</script>
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm">1</a>/<a href="blog2.htm">2</a>/<a href="blog3.htm">3</a>/<a href="blog4.htm">4</a>/<a href="blog5.htm">5</a>/<a href="blog6.htm">6</a>/<a href="blog7.htm">7</a>/<a href="blog8.htm"><b>8</b></a>/<a href="blog9.htm">9</a>/<a href="blog10.htm">10</a>/<a href="blog11.htm">11</a></center>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(_0x4b78x1,_0x4b78x2){_0x4b78x2['textContent']="Be\u011fenildi",_0x4b78x2['disabled']=!0}
+</script>
+
+
+
+  <div class="container">
+  <article class="blog-post">
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+            <h3 class="blog-title">Metropolde İnsan Kalabilmek</h3>
+            <p class="date">Yayın Tarihi: 25 Şubat 2026</p>
+            <p class="blog-summary" id="summary6">
+                Geçenlerde bir arkadaşımla Kızıltepe’de bulunan üçgen bir parkta otururken, 10 yaşlarında boyacı bir çocuğun herkesten ret cevabı alıp çaresizce dolandığını gördüm. İhtiyacı olduğunu anlayınca onu çağırıp ayakkabılarımı boyattım ve cebimdeki tüm bozuk paraları "üstü kalsın" diyerek ona verdim; sevinci görülmeye değerdi. 
+                <span id="dots6">...</span><span id="more6" style="display:none;"> Ardından gelen bir dilenciyi ise herkes kovdu. Elbette bu işi sektöre dökenler var, fakat bir talep varsa en azından bir ekmek parası vermek gerektiğine inanıyorum. Yanlış yapanlar yüzünden doğruyu yapmaktan vazgeçersek, dünya korku dolu ve tahammülsüz insanlarla dolar. Ne olursa olsun, metropollerin bu ruhsuzluğuna kapılmayıp insan tarafımızı korumak için çabalamalıyız.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary6')">Devamı</button>
+               <button class="like-button" onclick="handleLike(6, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(6)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Mesafelerin Güzelliği ve Teklik</h3>
+            <p class="date">Yayın Tarihi: 22 Şubat 2026</p>
+            <p class="blog-summary" id="summary7">
+                Ara sıra Pasifik'te bir adayı, Afrika'da bir kanyonu ya da Himalayalar'da bir kır çiçeğini düşünüp orada olmayı düşlüyorum. Fark ettim ki mesafeler olmasa her şey tek bir noktadan ibaret olurdu; oysa hayat, farklılıklar ve aradaki boşluklar demektir. 
+                <span id="dots7">...</span><span id="more7" style="display:none;"> Bu yüzden uzaktan sevmek bazen daha güzeldir; ne incitir ne de kanatır. Mesafeler bir yanılsama olsa da dünyanın zihnimizde görünmesi için bu illüzyona ihtiyacımız var. Aslında hiçbirimiz bir yerde değiliz, hep aynı tek noktadayız; ayrılık ve uzaklık sadece zihnimizde. Zamansız ve mesafesiz yaşamak, tüm hayatla "bir" olmak ve gerçeğin kendisini yaşamaktır.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary7')">Devamı</button>
+                <button class="like-button" onclick="handleLike(7, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(7)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Kendi İçsel Yolculuğum</h3>
+            <p class="date">Yayın Tarihi: 21 Şubat 2026</p>
+            <p class="blog-summary" id="summary8">
+                Hayatım boyunca çok okumanın ve çok gezmenin insanı gerçekten geliştirip geliştirmediğini hep sorguladım. Doğruyu bulmak için aklımı ve kalbimi hep birlikte yürüttüm; çünkü gerçek, zıtlıkların oluşturduğu paradokslarda gizlidir. Zamanla fark ettim ki, bilgi kaynakları ne kadar derin olursa olsun, bir insan ancak kendi düşünce kapasitesi kadarını algılayabiliyor. Şahit olduğum birçok olayda, az düşünen insanların elindeki o devasa, büyük eserlerin nasıl anlamını yitirdiğini gördüm. 
+                <span id="dots8">...</span><span id="more8" style="display:none;"> Bu süreçte öğrendiğim en büyük şey, doğru bir okuma yapabilmek için kalbim ile aklımı birlikte yürütmem gerektiği oldu. Bazen büyük düşünürlerin özlü sözlerini okurken, derinliği olmayan insanların bu sözler içinde nasıl kaybolup yollarını şaşırdıklarına tanık oluyorum. Çevremde küçük bir esprime bile tahammül edemeyen, realiteye gömülüp evrenle bağını koparan çok insan da gözlemledim. Sokrates veya Galileo gibi, genel doğruları reddetme cesaretini hep içimde taşıdım. Fark ettim ki insan, kendini sadece bedenle veya tek bir yaşamla sınırlayarak kendi ruhuna duvarlar örüyor. Oysa yaşadığım her şey bana tek bir gerçeği öğretti: Her zaman başka bir ihtimal vardır ki o da zıt kutupları bir arada görebildiğimiz o büyük paradoksun içinde gizli. Yaşadıklarımdan çıkardığım son sonuç şu oldu: Doğru cevaba ve hakikate ulaşabilmem için, erdem denen o ışığın hem kalbime hem de akıl dünyama bir güneş gibi doğması gerekiyor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary8')">Devamı</button>
+                <button class="like-button" onclick="handleLike(8, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(8)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Varlık ve İletişim Frekansı</h3>
+            <p class="date">Yayın Tarihi: 15 Şubat 2026</p>
+            <p class="blog-summary" id="summary9">
+                Bir canlının kendi dilinden konuşmadıkça onda bir zekâ veya duygu göremeyiz; bu durum felçli bir insanla konuşmaya çalışmak gibidir. İçeriyle bağ kuramadığımızda gördüklerimiz sadece kendi zanlarımızdan ibaret kalır.
+                <span id="dots9">...</span><span id="more9" style="display:none;"> Aslında her kütle birbiriyle kendi dilinde sohbet eder, fakat biz aynı radyo frekansında olmadığımız için her şeyi büyük bir sessizlik sanırız. Görmesi sınırlı olanlar için dağların ötesi yoktur, gökyüzü sadece bulutlar kadardır. Temas kuramayan için bir ağaç anlamsız bir kütledir. Anladım ki varlık ve yokluk, tamamen bir iletişim ve frekans meselesidir; siz bir şeye dokunduğunuzda, o da size dokunmuş olur.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary9')">Devamı</button>
+                <button class="like-button" onclick="handleLike(9, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(9)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Ölümsüzlük Boyası</h3>
+            <p class="date">Yayın Tarihi: 11 Şubat 2026</p>
+            <p class="blog-summary" id="summary0">
+                Sevmediğiniz bir insanla evlenerek ona hayattaki en büyük kötülüğü yapmış olursunuz; bu yüzden ancak gerçekten seviyorsanız evlenin. 
+                <span id="dots0">...</span><span id="more0" style="display:none;"> Çünkü her insan hata ve bencilliklerle doludur. İnsan sadece gerçekten sevdiğinde başkasındaki bu kusurları görmez. Hani aşık olunca sevdiğinizi hiçbir yere sığdıramazsınız ya; işte aşkın sevgiliyi kusursuz kılan o gücü, onun hatalarını örtmesinden gelir. Aşkın en güzel yanı da sevgiliyi kendi elleriyle ölümsüzlük boyasına boyamasıdır.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary0')">Devamı</button>
+                <button class="like-button" onclick="handleLike(0, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(0)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+
+            </div>
+        </article>
+
+
+<script>
+function generateAndOpenRSS() {
+    const currentUrl = window.location.href;
+    let xmlString = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n`;
+    xmlString += `  <title>İsmail Hakkı GÜLER'in Kişisel Blogu</title>\n`;
+    xmlString += `  <link>${currentUrl}</link>\n`;
+    xmlString += `  <description>Hayata dair düşünceler ve özgür düşünceler.</description>\n`;
+    xmlString += `  <language>tr-tr</language>\n`;
+
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+        const title = post.querySelector('.blog-title').innerText.trim();
+        const dateText = post.querySelector('.date').innerText.replace('Yayın Tarihi:', '').trim();
+        const summaryElement = post.querySelector('.blog-summary');
+        
+      
+        let fullDescription = summaryElement.innerText.replace('...', '').trim();
+
+        xmlString += `  <item>\n`;
+        xmlString += `    <title>${title}</title>\n`;
+        xmlString += `    <link>${currentUrl}</link>\n`;
+        xmlString += `    <description><![CDATA[${fullDescription}]]></description>\n`;
+        xmlString += `    <pubDate>${dateText}</pubDate>\n`;
+        xmlString += `  </item>\n`;
+    });
+
+    xmlString += `</channel>\n</rss>`;
+
+   
+    const blob = new Blob([xmlString], { type: 'application/xml' });
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+}
+</script>
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm">1</a>/<a href="blog2.htm">2</a>/<a href="blog3.htm">3</a>/<a href="blog4.htm"><b>4</b></a>/<a href="blog5.htm">5</a>/<a href="blog6.htm">6</a>/<a href="blog7.htm">7</a>/<a href="blog8.htm">8</a>/<a href="blog9.htm">9</a>/<a href="blog10.htm">10</a>/<a href="blog11.htm">11</a></center>
+</body>
+</html>

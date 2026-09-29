@@ -1,0 +1,165 @@
+<html>
+<head>
+<html lang="tr">
+<meta charset="UTF-8">
+<title>IHG-İletişim</title>
+<link rel="stylesheet" href="semettok.css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<font face="tahoma">
+<font size="1" class="a_blue_l">
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+<B><H3>İLETİŞİM 📲</B></H3>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+
+Görüş veya önerileriniz için anasayfada bulunan (FB, X, IN) sosyal medya profillerime girerek benimle iletişime geçebilirsiniz. Ya da aşağıdaki formu kullanarak e-posta adresime mesaj gönderebilirsiniz.
+
+
+<br><br>
+
+<form action="send_contact.php" method="POST" autocomplete="off">
+    <label>Ad Soyad</label><br>
+    <input type="text" name="full_name" required><br>
+
+    <label>E-posta</label><br>
+    <input type="email" name="email" required><br>
+
+    <label>Telefon</label><br>
+    <input type="tel" name="phone" required><br>
+
+    <label>Mesaj</label> (200 karakter)<br>
+   <textarea id="message" name="message" rows="6" cols="50" style="width: 72%; height: 70px; resize: none;" required></textarea>
+
+ <div id="charWarn" style="color: red; display: none; margin-top: 6px;">
+    200 karakter sınırını aştınız. Lütfen mesajınızı kısaltın.
+  </div>
+
+     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"><br>
+
+    <button type="submit">Gönder</button>
+<button type="reset" id="SilDugme" style="margin-left: 8px;">Temizle</button>
+  </form>
+<script>
+  
+  const textarea = document.getElementById('message');
+  const warn = document.getElementById('charWarn');
+  const SilDugme = document.getElementById('SilDugme');
+  textarea.addEventListener('input', function() {
+    const len = this.value.length;
+
+    if (len > 200) {
+    
+      this.value = this.value.substring(0, 200);
+      warn.style.display = 'block';
+    } else {
+      warn.style.display = 'none';
+    }
+  });
+  SilDugme.addEventListener('click', function() {
+    setTimeout(() => {
+      textarea.value = textarea.value.substring(0, 0);
+      warn.style.display = 'none';
+    }, 0);
+  });
+
+</script>
+
+<br><br>
+
+
+<style>
+  .sosyal-link {
+    text-decoration: none; 
+    color: inherit;
+    transition: opacity 0.4s ease;
+  }
+  
+ 
+  .sosyal-link:hover {
+    animation: blinker 0.4s linear infinite;
+  }
+
+  @keyframes blinker {
+    80% { opacity: 0.5; }
+  }
+</style>
+
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+
+<h3><strong>SOSYAL MEDYA HESAPLARIM:</strong></h3>
+<div style="display:flex; align-items:center;">
+    <img src="socialnetworks.png" style="max-width:15%; height:auto; margin-right: 1px;">
+    <div style="flex:1;">
+        <font color="#7497AC">
+            <h3>
+                <a href="https://youtube.com/ismailhakkiguler" target="_blank" title="Youtube" class="sosyal-link">/ismailhakkiguler</a><br><br>            
+            
+                <a href="https://facebook.com/ismailhakkiguler" target="_blank" title="Facebook" class="sosyal-link">/ismailhakkiguler</a><br><br>                
+            
+                <a href="https://instagram.com/ismail.hakkiguler" target="_blank" title="Instagram" class="sosyal-link">/ismail.hakkiguler</a><br><br>                
+               
+                <a href="https://twitter.com/ihakkiguler" target="_blank" title="X (Twitter)" class="sosyal-link">/ihakkiguler</a>
+            </h3>
+        </font>
+    </div>
+</div>
+
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+<br>
+<h3>Harita Konumu:</h3>
+
+<div style="width:100%; height:100px;">
+  <iframe
+    width="200"
+    height="85"
+    frameborder="1" style="border:1"
+    src="https://www.google.com/maps?q=37.183778,40.597819&hl=tr&z=15&output=embed"
+    allowfullscreen>
+  </iframe>
+</div>
+<strong>Adres:</strong><BR>
+Mardin/Kızıltepe<br>
+47400<br>
+<br>
+<br><center>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div><br><br>
+<img src="barcode.jpg" style="max-width:45%; height:auto; margin-right: 1px;"></center><bR>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div><br><br>
+
+ <button type="button" class="btn" onclick="history.back();">◄</button>
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+</head>
+</body>

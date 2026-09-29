@@ -1,0 +1,259 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(_0x4b78x1,_0x4b78x2){_0x4b78x2['textContent']="Be\u011fenildi",_0x4b78x2['disabled']=!0}
+</script>
+
+
+
+  <div class="container">
+  <article class="blog-post">
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+            <h3 class="blog-title">Biraz da Ahmet TELLİ...</h3>
+            <p class="date">Yayın Tarihi: 21 Temmuz 2025</p>
+            <p class="blog-summary" id="summary6">
+             
+Kar tanelerindeki hayat gizemli  evrenleri keşfetti.  Karadeliklerin olay ufkunda manyetik rüzgarlar denizlerine açıldı. Asteroidlerin meteor yağmurlarına uğramış yüzeyleri geçmişi özetliyordu. "başlangıç" dedi bulutsu takımyıldızları. Öteki galaksilerin haykıran tozlu rüzgarları serpildi... Nebulalar arasından geçerken  bir yandan da halkalar oluşturuyordu yıldızlar. Soğuk ve karanlık bölgelerden geçiyordu ufak asteroidler. Bir ateş böceği kadar kendine yakın, bir okyanusun ihtişamı kadar kendine uzaktı. Kendini evrenin öteki kıyılarına sürüklüyordu. Yıldızların düş kurdurucu olduklarını öğrenmiştim.    <span id="dots6">...</span><span id="more6" style="display:none;"> 
+Yıldızların da ütopyaları olmalıydı. Ama bir yandan tükeniyordu yıldızın sıcaklığı. Hızla, ışık hızıyla tükeniyordu. 
+Karadelikler sönmüş gezegenleri kendine çekebilirlerdi. <BR>
+Sonra düşündüm de,<BR> Evren küçük bir okyanusmuş meğer
+Kıyısında yelkenler batan..<BR>
+Evren hiçlik'ten de küçükmüş meğer<BR>
+Yaşamı ve ölümü ezberleyecek kadarmış<BR>
+Sonra bir ışık yılında, yırtılmış ozon tabakasının altında Dünya'yı gördü. <BR>İnsanlar, çamur içindeki larvalara benziyorlardı. <BR>Küçük yıldız dehşetle baktı aşağıya. <BR>İşte tam o an ayağı bir meteora takıldı ve kaymaya başladı. <BR>Düşüyordu. <BR>Tutunabileceği birşey yoktu evrende. <BR>Tutunmak ta istemiyordu zaten... <BR>Işığa ve kendine veda etmenin vakti gelmişti. <BR>"Vedanın anlamı ne" diye düşündü sonra. <BR>Anlamsızdı.<BR> Dünya'ya inme duygusunun bir biçimiydi veda.<BR> Son çabasını aşağıdaki Dünya kirliliğine düşmemek için harcadı ve kılpayı kurtuldu bundan.<BR>
+Evren<BR>
+Küçük bir okyanusmuş meğer<BR>
+Kıyısında yelkenliler batan<BR>
+Kendini gök uçurumuna bırakırken küçük yıldızın son baladı şu oldu:<BR>
+D ü ş ü y o r u m<BR>
+t o z l a ş a r a k<BR>
+d<BR>
+ü<BR>
+ş<BR>
+ü<BR>
+y<BR>
+o<BR>
+r<BR>
+u<BR>
+m<BR>
+Dünya olmasın da...
+</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary6')">Devamı</button>
+               <button class="like-button" onclick="handleLike(6, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(6)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Murathan Mungan'ı okurken...</h3>
+            <p class="date">Yayın Tarihi: 16 Temmuz 2025</p>
+            <p class="blog-summary" id="summary7">
+                "Çocukken çok büyük diye anımsadığımız bahçeleri, evleri, avluları yıllar sonra ziyaret ettiğimizde çoğu kez çocukluk imgelemimizin bizi yanıltmış olduğunu görür, gördüklerimiz karşısında hayalkırıklığına kapılırız.
+                <span id="dots7">...</span><span id="more7" style="display:none;"> Hiçbir şey bizim hatırladığımız ve sandığımız kadar büyük ya da geniş değildir. Bizi yanıltan çocukluktur, diye düşünürüz. Belki de büyümemiş çocukların hayatları boyunca yanılmaları bu yüzdendir."</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary7')">Devamı</button>
+                <button class="like-button" onclick="handleLike(7, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(7)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Albert Camus’a göre Absürd nedir?</h3>
+            <p class="date">Yayın Tarihi: 11 Temmuz 2025</p>
+            <p class="blog-summary" id="summary8">
+                "Absürd nedir? Kolayca görülebileceği üzere, ben rasyonel bir varlık olarak mantığım ve amacım doğrultusunda, düşüncelerimin yansıttığı biçimde hareket etmek zorundayımdır: Başka bir şey yaptığımı sanmam da mantığımın ve düşüncelerimin doğrultusunda olur, kısacası başka türlü hareket edemem ve yine hareket etmemin zorunlu olduğu yerdeyimdir...
+                <span id="dots8">...</span><span id="more8" style="display:none;"> Absürd ya da absürdün erdemiyle hareket etmem inancımın doğrultusunda olur... Hareket etmek zorundayım fakat düşüncelerim yolu kapatıyor ve olasılıklardan birini alarak şöyle diyorum: Yaptığım hareket budur, başka türlü yapamam çünkü buraya düşüncelerimin yansıtmasıyla getirildim."</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary8')">Devamı</button>
+                <button class="like-button" onclick="handleLike(8, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(8)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Karınca Kato'yu Duydunuz Mu?</h3>
+            <p class="date">Yayın Tarihi: 16 Haziran 2025</p>
+            <p class="blog-summary" id="summary9">
+                Mahkumun biri, yalnız kaldığı hücre içinde bir karınca ile arkadaşlık yapar. Kito adını verdiği bu karınca zaman içerisinde adamın talimatlarına göre hareket eder hatta takla atmayı bile öğrenir. Mahkum, insanların Kito’ya hayran kalacağını ve göreceği büyük ilgi sayesinde zengin olacağının hayalini kurmaktadır. Hapisten tahliye olduğu gün Kito’yu kibrit kutusunun içine koyarak bir kafeteryaya gider. 
+                <span id="dots9">...</span><span id="more9" style="display:none;"> Amacı insanların Kito’ya nasıl tepki vereceğini test etmektir. Karıncayı kibrit kutusundan çıkaran eski mahkum garsonu çağırır. Amacı garsona Kito’nun marifetlerini göstermektir. Garsona "Masanın üstünde duran şu karıncayı görüyor musun?" diye sorar sormaz, garson elindeki bezle karıncayı alır ve "Afedersiniz beyefendi" diyerek Kito’yu öldürür. Her kişinin kendine ait değerleri ve inançları vardır. Bir kişi için çok önemli olan bir olay diğeri için pek de önemli olmayabilir. Kişileri kendi inanç sistemimize göre değerlendirirsek sorunlarla karşılaşabiliriz. Yapmamız gereken kişilerin inanç ve değerlerine saygılı olmak ve ilişkilerimizde kendimizi onların yerine koyarak hareket etmektir. Çünkü altının değerini en iyi sarraf bilir.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary9')">Devamı</button>
+                <button class="like-button" onclick="handleLike(9, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(9)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Kozmik Yakınlık ve Sınırların Ötesindeki Hayranlık</h3>
+            <p class="date">Yayın Tarihi: 11 Haziran 2025</p>
+            <p class="blog-summary" id="summary0">
+                Çevremizde hoşlanılan kişileri kendinden üstün, hoşlanılmayanları ise aşağı görme eğilimi var; oysa bu hiyerarşik bakış açısı son derece sığdır. Eğer hayata böyle baksaydık yeryüzünde sevecek insan bulamazdık; çünkü aşağının aşağısı, yukarının da yukarısı vardır ve bunun bir sonu yoktur. Ben insanlar arasında üstünlük değil, bir yakınlık ararım; düşünsel, zihinsel, kalbi ve fikri bir yakınlık...
+                <span id="dots0">...</span><span id="more0" style="display:none;"> Benim yakınlık ve sempati dediğim şey; bazen küçük bir çocuğun saflığına, bazen mavi gökyüzüne ya da uçsuz bucaksız okyanusa duyulan o saf ilgi gibidir. Tıpkı sudaki renkli bir balığa, beyaz tüylü ihtişamlı bir kediye bakmak ya da kır çiçekleri arasında utangaç bir çiçeği fark etmek gibidir. Beni asıl büyüleyen şeyler; inancın ışığı, samimiyetin derinliği, sonsuz uzay gibi uçsuz bucaksız bir sabır, sınır tanımayan bir cesaret ve her şeye rağmen ayakta kalan o asil iyi niyettir. Eğer hayatta gerçek bir büyüklük ya da hayranlık aranacaksa, bu ancak her şeyi içine alan ve her zerrede kendini gösteren iyi niyetli düşüncelerin o muazzam toplamı olmalıdır.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary0')">Devamı</button>
+                <button class="like-button" onclick="handleLike(0, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(0)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+<script>
+function generateAndOpenRSS() {
+    const currentUrl = window.location.href;
+    let xmlString = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n`;
+    xmlString += `  <title>İsmail Hakkı GÜLER'in Kişisel Blogu</title>\n`;
+    xmlString += `  <link>${currentUrl}</link>\n`;
+    xmlString += `  <description>Hayata dair düşünceler ve özgür düşünceler.</description>\n`;
+    xmlString += `  <language>tr-tr</language>\n`;
+
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+        const title = post.querySelector('.blog-title').innerText.trim();
+        const dateText = post.querySelector('.date').innerText.replace('Yayın Tarihi:', '').trim();
+        const summaryElement = post.querySelector('.blog-summary');
+        
+      
+        let fullDescription = summaryElement.innerText.replace('...', '').trim();
+
+        xmlString += `  <item>\n`;
+        xmlString += `    <title>${title}</title>\n`;
+        xmlString += `    <link>${currentUrl}</link>\n`;
+        xmlString += `    <description><![CDATA[${fullDescription}]]></description>\n`;
+        xmlString += `    <pubDate>${dateText}</pubDate>\n`;
+        xmlString += `  </item>\n`;
+    });
+
+    xmlString += `</channel>\n</rss>`;
+
+  
+    const blob = new Blob([xmlString], { type: 'application/xml' });
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+}
+</script>
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm">1</a>/<a href="blog2.htm">2</a>/<a href="blog3.htm">3</a>/<a href="blog4.htm">4</a>/<a href="blog5.htm">5</a>/<a href="blog6.htm">6</a>/<a href="blog7.htm">7</a>/<a href="blog8.htm">8</a>/<a href="blog9.htm"><b>9</b></a>/<a href="blog10.htm">10</a>/<a href="blog11.htm">11</a></center>
+</body>
+</html>

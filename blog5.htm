@@ -1,0 +1,242 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(_0x4b78x1,_0x4b78x2){_0x4b78x2['textContent']="Be\u011fenildi",_0x4b78x2['disabled']=!0}
+</script>
+
+
+
+  <div class="container">
+  <article class="blog-post">
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+            <h3 class="blog-title">Sihirli Lamba ve Gerçek Zenginlik</h3>
+            <p class="date">Yayın Tarihi: 05 Şubat 2026</p>
+            <p class="blog-summary" id="summary6">
+                Biz insanlar hayattaki olasılıkları ve değerleri doğru bir dereceyle sıralamayı pek beceremiyoruz. Örneğin yolda bir şişe bulsam, içinden bir cin çıksa ve bana üç dilek hakkı tanısa; ondan asla büyük bir uzay gemisi, lüks bir yat ya da çuvalla para istemem. Zeka, akıl, yüksek muhakeme yeteneği ve derin bir anlama kabiliyeti dilerim. Çünkü bir aptal olarak lüks bir yatın veya son teknoloji uzay gemisinin içinde oturmanın hiçbir manası yoktur.
+                <span id="dots6">...</span><span id="more6" style="display:none;"> İnsan, sonsuz duyarlılıklarla dolu bir kalbe ve akla sahip olduğunda, önündeki bir damla suyun güzelliği içinde bile koca yatlar, devasa uzay gemileri yüzdürebilir. Mesele tamamen bir duyarlılık ve derinlik meselesidir. Bir aptalı, bir körü ya da bir sağırı alıp saf ışığın tam ortasına koymanın hiçbir esprisi yoktur. Kişi ancak kendi ruhunun, gönlünün algıladığı ve hissettiği oranda hayattan haz alır ve bir mana çıkarır.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary6')">Devamı</button>
+               <button class="like-button" onclick="handleLike(6, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(6)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Uykudan Sonraki Yabancı</h3>
+            <p class="date">Yayın Tarihi: 17 Ocak 2026</p>
+            <p class="blog-summary" id="summary7">
+                Merak ettiğim bir şeyi sormak istiyorum; derin bir uykudan uyandığımda, hâlâ kendim olduğumu nasıl bilebilirim?
+                <span id="dots7">...</span><span id="more7" style="display:none;"> Eğer uyku bana yeni bir geçmiş, yeni bir yüz, yabancı bir ev ve bambaşka fikirler yüklemişse, bunun bir simülasyon olmadığını nasıl kanıtlayabilirim? Şu anki bilincimin, geçmişteki "ben" olduğundan şüphe etmemesi için, geçmişin beynime sonradan kodlanmadığından nasıl emin olabilirim? Belki de her sabah, sadece o an yaratılmış sahte bir hafızayla gözlerimi açıyorum. Aynaya baktığımda gördüğüm o tanıdık yüzün arkasında soruyorum: Biz gerçekten biz miyiz?</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary7')">Devamı</button>
+                <button class="like-button" onclick="handleLike(7, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(7)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Duvara Karşı Ağlamak</h3>
+            <p class="date">Yayın Tarihi: 16 Ocak 2026</p>
+            <p class="blog-summary" id="summary8">
+                Bir ara rastgele haberler izlerken, bir gazetecinin, Kudüs’te ağlama duvarının önünden gelip geçenleri izlediğini fark ettim. Gazeteci,  yahudi’nin her gün duvarın önünde diz çöküp dua ettiğini görmüş. Haftalarca aynı manzarayı görünce dayanamamış gazeteci. Bu adamla konuşmayı denemiş:
+
+ 
+                <span id="dots8">...</span><span id="more8" style="display:none;"> <br>- " Sizi her gün dua ederken görüyorum..." 
+<br>-Adam cevaplamış:- " Evet, sabahları gelir, israil devleti için barış kardeşlik için dua ederim... Öğleden sonraları gelir, yeryüzündeki acıların ortadan kalkması ve bütün insanların refaha kavuşması için dilekte bulunurum..."
+<br>- "Ne kadardır sürüyor bu?" 
+<br>- "Tam 25 yıldır..."
+<br>- "Bunca yıl sonra nasıl bir duygu var içinizde?"
+<br>- "Duvara konuşuyormuşum gibi bir duygu!.." 😊</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary8')">Devamı</button>
+                <button class="like-button" onclick="handleLike(8, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(8)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">İnsanın Kendi Yoğunluğu</h3>
+            <p class="date">Yayın Tarihi: 06 Ocak 2026</p>
+            <p class="blog-summary" id="summary9">
+                İnandım ki hayatta varıp görebileceğim, kokusunu alabileceğim en güzel gül bahçesi, ancak hayal gücümün ve kendi kapasitemin izin verdiği kadardır. Çünkü insan ne kadarsa, ancak o kadarıyla muhatap olabilir. 
+                <span id="dots9">...</span><span id="more9" style="display:none;"> İçimde ne varsa, çevreme de sadece onu neşrederim; içimde huzur ve sevgi varsa hallerimden bu taşar, eğer kendimle çatışma halindeysem girdiğim toplumları olumsuzlukla zehirlerim. Bu yüzden insanın varlığı su gibi berrak, kar kristalleri gibi saf olmalı; toprağa ve insanlara rahmet saçmalıdır. Kusurları örtmeli, gönülleri birleştirmeli ve her zaman yapıcı bir varlık sahasına sahip olmalıdır.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary9')">Devamı</button>
+                <button class="like-button" onclick="handleLike(9, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(9)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Zaman İllüzyonu ve Sonsuz Yolculuk</h3>
+            <p class="date">Yayın Tarihi: 02 Ocak 2026</p>
+            <p class="blog-summary" id="summary0">
+                Zaman kavramı ve takvimler, aslında her şeyi kendi zihnimizde canlandırdığımızın en güzel örneğidir; çünkü koca evreni kendi küçük ölçülerimize göre yorumluyoruz. Oysa gerçekte, zamanın hem başında hem de sonunun üst üste çakıştığı o tek bir "an" içindeyiz.
+                <span id="dots0">...</span><span id="more0" style="display:none;"> Varoluş insanla başlamadığı gibi insanla da bitmeyecek; biz gitsek bile yaratma sanatı her daim sürecektir. İnsanoğlu olarak bu dünyadan sonra da çok başka boyutlarda, evrenlerde ve alemlerde yolculuğumuza devam edeceğiz.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary0')">Devamı</button>
+                <button class="like-button" onclick="handleLike(0, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(0)">Paylaş</button>
+ <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+<script>
+function generateAndOpenRSS() {
+    const currentUrl = window.location.href;
+    let xmlString = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n`;
+    xmlString += `  <title>İsmail Hakkı GÜLER'in Kişisel Blogu</title>\n`;
+    xmlString += `  <link>${currentUrl}</link>\n`;
+    xmlString += `  <description>Hayata dair düşünceler ve özgür düşünceler.</description>\n`;
+    xmlString += `  <language>tr-tr</language>\n`;
+
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+        const title = post.querySelector('.blog-title').innerText.trim();
+        const dateText = post.querySelector('.date').innerText.replace('Yayın Tarihi:', '').trim();
+        const summaryElement = post.querySelector('.blog-summary');
+        
+      
+        let fullDescription = summaryElement.innerText.replace('...', '').trim();
+
+        xmlString += `  <item>\n`;
+        xmlString += `    <title>${title}</title>\n`;
+        xmlString += `    <link>${currentUrl}</link>\n`;
+        xmlString += `    <description><![CDATA[${fullDescription}]]></description>\n`;
+        xmlString += `    <pubDate>${dateText}</pubDate>\n`;
+        xmlString += `  </item>\n`;
+    });
+
+    xmlString += `</channel>\n</rss>`;
+
+   
+    const blob = new Blob([xmlString], { type: 'application/xml' });
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+}
+</script>
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm">1</a>/<a href="blog2.htm">2</a>/<a href="blog3.htm">3</a>/<a href="blog4.htm">4</a>/<a href="blog5.htm"><b>5</b></a>/<a href="blog6.htm">6</a>/<a href="blog7.htm">7</a>/<a href="blog8.htm">8</a>/<a href="blog9.htm">9</a>/<a href="blog10.htm">10</a>/<a href="blog11.htm">11</a></center>
+</body>
+</html>

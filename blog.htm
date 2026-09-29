@@ -1,0 +1,240 @@
+<html>
+<head>
+    <title>IHG-Blog</title>
+    <meta charset="UTF-8">
+    <html lang="tr">
+    <link rel="stylesheet" href="semettok.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <font face="tahoma">
+    <font size="1" class="blue">
+
+<body>
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+    <script>
+        function toggleReadMore(summaryId) {
+            const summary = document.getElementById(summaryId);
+            const dots = document.getElementById('dots' + summaryId.slice(-1));
+            const moreText = document.getElementById('more' + summaryId.slice(-1));
+            const btn = summary.parentElement.querySelector('.read-more');
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btn.textContent = "Devamını Gör";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btn.textContent = "Daha Az Göster";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<script>
+function sharePost(postIndex) {
+    const postUrl = window.location.href;
+       const summaryText = document.getElementById('summary' + postIndex).innerText.trim();
+    const text = encodeURIComponent("Bu paylaşım için özet: " + summaryText);
+
+     const platform = prompt("Blog içeriğini paylaşmak için platform seçin: (Facebook için F, Twitter için X yazıp onaylayın)", "Facebook");
+    let shareUrl = "";
+
+    if (platform === null) {
+        return; 
+    }
+
+    if (platform.toLowerCase() === 'facebook' || platform === 'F' || platform === 'f') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"e=${text}`;
+    } else if (platform.toLowerCase() === 'twitter' || platform === 'X' || platform === 'x') {
+        shareUrl = `https://x.com/intent/tweet?text=${text}&url=${encodeURIComponent(postUrl)}`;
+    } else {
+        alert("Geçerli bir platform girin: Facebook veya (X)Twitter.");
+        return;
+    }
+
+    const shareWindow = window.open(shareUrl, 'Share', 'width=600,height=400');
+    if (!shareWindow) {
+        alert("Paylaşım penceresi açılmadı. Lütfen pop-up engelleyicilerini kontrol edin.");
+    }
+    shareWindow.focus();
+}
+</script>
+
+<script>
+function handleLike(_0x4b78x1,_0x4b78x2){_0x4b78x2['textContent']="Be\u011fenildi",_0x4b78x2['disabled']=!0}
+</script>
+
+
+    <div class="container">
+        <article class="blog-post">
+<body>
+
+<b><h3>BLOG ✒️ </b><br></h3>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+
+<i>Kişisel Blog'uma Hoşgeldiniz...<br><br></i>
+Zamanımın büyük bir kısmı bilişim teknolojileri dünyasında geçiyor olmasına karşın, bu blog ise ekranın diğer tarafına, yani hayata baktığım pencereyi özetliyor. Burada teknik rehberler değil; hayata dair düşüncelerim, günlük tecrübeler ve zihnimden geçen özgür düşünceleri bulacaksınız. Keyifli okumalar.<br><br>
+   <h3 class="blog-title">İsmail’in Zamansız Dostlukları</h3>
+            <p class="date">Yayın Tarihi: 20 Temmuz 2026 </p>
+            <p class="blog-summary" id="summary2">
+                Geçen gün bir arkadaşım sitemkâr bir ifadeyle bana, "İsmail, senin garip bir tarafın var. Bunca zamandır bir aradayız ama ses tonun, bakışın ve yaklaşımın sanki daha ilk kez tanışıyormuşuz gibi... Sanki içinde bir yerde seni, hatıralarını ve düne dair ne varsa sıfırlayan bir şeyler var. 
+                <span id="dots2">...</span><span id="more2" style="display:none;"> Ayrı bir gezegenden gelmiş gibisin," diyerek bir eleştiri getirdi. Ben de ona sakin hislerimle, "Bunu olumlu tarafından düşün," dedim. Şaşırarak "Nasıl yani?" diye sorunca, "Düşünsene, senden asla sıkılmayacak bir arkadaşa sahipsin; seninle her gün, ilk günkü gibi yeniden tanışıyor..." cevabını verdim. Arkadaşım birden gülmeye başladı ve "Hiç bu açıdan düşünmemiştim," diyerek eleştirisinden vazgeçti.</span>
+            </p>
+            <div class="actions">
+                <button class="read-more" onclick="toggleReadMore('summary2')">Devamı</button>
+                <button class="like-button" onclick="handleLike(2, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(2)">Paylaş</button>
+                <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+        <article class="blog-post">           
+ <h3 class="blog-title">Zihinsel Kurgular ve Gerçeklik Yanılsaması</h3>
+            <p class="date">Yayın Tarihi: 15 Ağustos 2026</p>
+            <p class="blog-summary" id="summary1">
+                Çevremdeki insanların büyük bir kısmının psikolojik bir yanılsama içinde yaşadığını gözlemliyorum. İnsanların en büyük yanılgısı, ortada duran yalın gerçekler yerine kendi kafalarında kurguladıkları senaryoları dikkate almaları ve bunlara körü körüne inanmalarıdır.
+                <span id="dots1">...</span><span id="more1" style="display:none;"> Çoğu kişi, bilinçaltında arzuladığı ya da korktuğu ne kadar pozitif veya negatif duygu varsa karşısındaki insana yansıtıyor; insanları oldukları gibi değil, sadece görmek istedikleri o dar çerçeveden değerlendiriyor. Bu durum, kaotik kurgularla çıplak gerçeği birbirinden ayırt edememe hastalığından başka bir şey değildir. Şahit olduğum tüm insan ilişkilerindeki zıtlaşmaların ve kavgaların temelinde, zihnin gerçeği çarpıtan bu hastalıklı bakış açısı yatıyor.</span>
+            </p>
+            <div class="actions">
+                <button class="read-more" onclick="toggleReadMore('summary1')">Devamı</button>
+                <button class="like-button" onclick="handleLike(1, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(1)">Paylaş</button>
+                <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+        <article class="blog-post">
+         
+            <h3 class="blog-title">Kendi Değirmenlerimle Savaşım</h3>
+            <p class="date">Yayın Tarihi: 02 Ağustos 2026</p>
+            <p class="blog-summary" id="summary3">
+               Bazen geçmişe bakıp kendi içimde büyüttüğüm o eski aşk meselelerini düşününce, düştüğüm durumlara kendi kendime gülesim geliyor. Yaşananlar gerçekten tümden trajikomik! Kendimi bazen Cervantes’in ıssız vadilerde dev sanıp yel değirmenleriyle savaşan Don Kişot’una benzetiyorum.
+                <span id="dots3">...</span><span id="more3" style="display:none;"> Tecrübelerimle bizzat sabitlendi ki, eğer büyük bir aşk karşı tarafta karşılık bulmuyorsa, orada büyük bir uyumsuzluk vardır: "Ben neyin derdindeyim, o neyin derdinde!" Bu çıkardığım ders hayali romanlardan veya masallardan değil, doğrudan kendi hayatımın gerçeklerinden alıntıdır.</span>
+            </p>
+            <div class="actions">
+                <button class="read-more" onclick="toggleReadMore('summary3')">Devamı</button>
+                <button class="like-button" onclick="handleLike(3, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(3)">Paylaş</button>
+                <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Zaman Sapmaları ve Beynin Dehlizleri</h3>
+            <p class="date">Yayın Tarihi: 14 Haziran 2026</p>
+            <p class="blog-summary" id="summary4">
+                Bazen geçmişe ait kayıp tarihler aklımda canlanır ve unutmanın bilgiyle, yanılmanın ise iradeyle ilgili bir zaaf olduğunu düşünürüm. Some anlarda cep telefonuma baktığımda tarih ve saatin aniden değiştiğini görüyorum. Acaba kozmik bir alıkonulma esnasında masadan alınan telefon, ait olduğu zamana geri bırakılırken uzaylılar küçük bir hata mı yaptı diye düşünmeden edemiyorum. Kapalı kapılar ardındaki o fısıltıları duyar gibi olduğumda ise konuşanın bir uzaylı mı, boyutlar arası bir varlık mı yoksa beynimin derin dehlizlerinde üretilen kimyasal bir simülasyon mu olduğunu bilmek imkansızlaşıyor
+                <span id="dots4">...</span><span id="more4" style="display:none;"> Şayet bilgili biriyseniz, karşılaştığınız bu bilinmez gücü hemen şeytan, cin, melek ya da başka dünyaların bilim insanı şeklinde etiketleme kolaylığına kaçabilirsiniz. Oysa insan beyninin katmanlarında kaç farklı şuurun ve kişiliğin saklı olduğunu henüz çözebilmiş değiliz. Bana göre tüm bu iddialı açıklamalar, kendi rüyasında savaş oyunu kazanıp aldığı puanları ve fethettiği kaleleri büyük bir gerçeklikle anlatan birinin çocuksu tasvirlerinden daha fazla bir değer taşımıyor.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary4')">Devamı</button>
+                <button class="like-button" onclick="handleLike(4, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(4)">Paylaş</button>
+                <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+ <article class="blog-post">
+            <h3 class="blog-title">Mavi Gökyüzü ve Etkisiz Kelimeler</h3>
+            <p class="date">Yayın Tarihi: 24 Mayıs 2026</p>
+            <p class="blog-summary" id="summary5">
+                İnsanların geçmiş duygularının esiri olarak mekanik birer robot gibi yaşadıklarını gözlemliyorum. Şahit olduğum hemen herkesin düşlerine baksam, sadece birkaç kelimemle onun tüm kimyasını bozabileceğimi, onu vahşi bir canavara ya da bambaşka bir duygu durumuna sokabileceğimi fark ediyorum. Anladım ki korkan, endişelenen, acı çeken ve yaralanan tek şey egodur.
+                <span id="dots5">...</span><span id="more5" style="display:none;"> Oysa bizim asıl özümüz sakin, mavi bir gökyüzü gibidir; düşünceler ve duygular ise sadece gelip geçen bulutlardır. İnsan derinlerdeki o saf özüne inip oradan dünyaya baktığında, her şeyi hoş gören sarsılmaz bir hale bürünür. Bu makamdaki birine ne derseniz deyin, sadece gülümseyip geçecektir; çünkü orada kelimelerin çarpıp yansıyacağı bir ego kalmamıştır. O, kendisine söylenen her kelimenin aslında söyleyenin kendisiyle ilgili bir meselesi olduğunu bilir. Herkesin meselesi kendisiyledir; bu yüzden her koşulda sakin kalmak, yani sonsuz bir sabır ve karşılıksız bir anlayış geliştirmek en doğrusudur.</span>
+            </p>
+            <div class="actions">
+
+   <button class="read-more" onclick="toggleReadMore('summary5')">Devamı</button>
+                <button class="like-button" onclick="handleLike(5, this)">Beğen</button>
+                <button class="share-button" onclick="sharePost(5)">Paylaş</button>
+                <button class="rss-button" onclick="generateAndOpenRSS()">RSS</button>
+            </div>
+        </article>
+
+
+
+
+<script>
+function generateAndOpenRSS() {
+    const currentUrl = window.location.href;
+    let xmlString = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n`;
+    xmlString += `  <title>İsmail Hakkı GÜLER'in Kişisel Blogu</title>\n`;
+    xmlString += `  <link>${currentUrl}</link>\n`;
+    xmlString += `  <description>Hayata dair düşünceler ve özgür düşünceler.</description>\n`;
+    xmlString += `  <language>tr-tr</language>\n`;
+
+    const posts = document.querySelectorAll('.blog-post');
+    posts.forEach(post => {
+        const title = post.querySelector('.blog-title').innerText.trim();
+        const dateText = post.querySelector('.date').innerText.replace('Yayın Tarihi:', '').trim();
+        const summaryElement = post.querySelector('.blog-summary');
+        
+      
+        let fullDescription = summaryElement.innerText.replace('...', '').trim();
+
+        xmlString += `  <item>\n`;
+        xmlString += `    <title>${title}</title>\n`;
+        xmlString += `    <link>${currentUrl}</link>\n`;
+        xmlString += `    <description><![CDATA[${fullDescription}]]></description>\n`;
+        xmlString += `    <pubDate>${dateText}</pubDate>\n`;
+        xmlString += `  </item>\n`;
+    });
+
+    xmlString += `</channel>\n</rss>`;
+
+
+    const blob = new Blob([xmlString], { type: 'application/xml' });
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+}
+</script>
+
+
+
+
+
+
+
+</font>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+<br>
+<center>Sayfa <a href="blog.htm"><b>1</b></a>/<a href="blog2.htm">2</a>/<a href="blog3.htm">3</a>/<a href="blog4.htm">4</a>/<a href="blog5.htm">5</a>/<a href="blog6.htm">6</a>/<a href="blog7.htm">7</a>/<a href="blog8.htm">8</a>/<a href="blog9.htm">9</a>/<a href="blog10.htm">10</a>/<a href="blog11.htm">11</a></center>
+</body>
+</html>

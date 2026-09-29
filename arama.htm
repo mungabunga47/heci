@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İsmail Hakkı GÜLER.com - Kişisel Web Sayfası - Arama Sonuçları</title>
+  <style>
+    :root {
+      --bg: #f9fbfd;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #4f46e5;
+      --shadow: 0 8px 24px rgba(0,0,0,.08);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto;
+      background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+      color: var(--text);
+    }
+    .container { max-width: 1000px; margin: 48px auto; padding: 0 20px; }
+    .card {
+      background: var(--card); border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow); border: 1px solid #e6e9f0; overflow: hidden;
+    }
+    .card-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px; padding-bottom: 12px; border-bottom: 1px solid #eef1f5; margin-bottom: 12px;
+    }
+    h1 { font-size: 28px; margin: 0; font-weight: 700; }
+    .sub { color: var(--muted); font-size: 14px; }
+    #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+    .result {
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+      padding: 14px; transition: transform .2s ease, background .2s;
+    }
+    .result:hover { transform: translateY(-2px); background: #f8fbff; }
+    .result a { color: var(--accent); text-decoration: none; font-size: 16px; font-weight: 700; }
+    .snippet { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    #noResults { color: var(--muted); padding: 12px; }
+    .toolbar { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 0 0; }
+    .btn {
+      background: var(--accent); border: none; color: #fff; padding: 8px 14px;
+      border-radius: 8px; cursor: pointer; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 700px) { h1 { font-size: 24px; } #results { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="resultsContainer">
+      <div class="card-header">
+        <h1>İsmailHakkiGuler.com</h1>
+        <span class="sub">Site İçi Arama Sonuçları</span>
+      </div>
+      <div id="results"></div>
+      <div id="noResults" style="display:none;">Arama sonucu bulunamadı.</div>
+    </div>
+    <div class="toolbar">
+      <button type="button" class="btn" onclick="history.back();">Geri Git</button>
+    </div>
+  </div>
+
+
+  <script src="arama-verisi.js"></script>
+
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name) || "";
+    }
+
+    function temizle(str) {
+      return str
+        .toLowerCase()
+        .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
+        .replace(/ç/g, 'c').replace(/ö/g, 'o').replace(/ü/g, 'u');
+    }
+
+    function renderResults(query) {
+      const resultsEl = document.getElementById("results");
+      const noResultsEl = document.getElementById("noResults");
+      resultsEl.innerHTML = "";
+
+      if (!query || !query.trim()) {
+        noResultsEl.textContent = "Aramak istediğiniz kelime için anasayfaya dönün";
+        noResultsEl.style.display = "block";
+        return;
+      }
+
+  
+      if (typeof sitePages === 'undefined') {
+        noResultsEl.textContent = "Hata: 'arama-verisi.js' dosyası bulunamadı veya yüklenemedi.";
+        noResultsEl.style.display = "block";
+        return;
+      }
+
+      const q = temizle(query.trim());
+      let matchedCount = 0;
+
+      sitePages.forEach(page => {
+        const titleClean = temizle(page.title);
+        const textClean = temizle(page.text);
+
+        if (titleClean.includes(q) || textClean.includes(q)) {
+          matchedCount++;
+          let snippet = "İçerik eşleşmesi bulundu.";
+          const index = textClean.indexOf(q);
+
+          if (index !== -1) {
+            const start = Math.max(0, index - 40);
+            const end = Math.min(page.text.length, index + q.length + 60);
+            snippet = "..." + page.text.substring(start, end).replace(/\s+/g, ' ').trim() + "...";
+          }
+
+          const item = document.createElement('div');
+          item.className = 'result';
+          item.innerHTML = `
+            <a href="${page.url}">${page.title}</a>
+            <div class="snippet">${snippet}</div>
+          `;
+          resultsEl.appendChild(item);
+        }
+      });
+
+      if (matchedCount === 0) {
+        noResultsEl.textContent = `Arama sonucunuz "${query}" bulunamadı.`;
+        noResultsEl.style.display = "block";
+      } else {
+        noResultsEl.style.display = "none";
+      }
+    }
+
+    const queryFromUrl = getQueryParam('q');
+    renderResults(queryFromUrl);
+  </script>
+</body>
+</html>
