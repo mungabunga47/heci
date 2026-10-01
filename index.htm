@@ -149,61 +149,51 @@
 			<div style="margin-left:246px; margin-top:2px">
 
 <style>
-body {
-    height: 100vh;
-    margin: 0;
-    display: absolute;
-    justify-content: center;
-    align-items: center;
-}
+
 #linkContainer {
     position: relative;
     display: inline-block;
 }
-#link {
-    text-decoration: none;
-    color: blue;
-    font-size: 19px;
+#Link {
     display: inline-block;
+    cursor: pointer;
 }
+
 #dropdownMenu {
     position: absolute;
     top: 0;
-    right: 34;
+    right: 100%; 
+    margin-right: 5px; 
     width: 0;
     background-color: #8eb7cb;
     text-align: right;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     white-space: nowrap;
-    transition: width 1s ease, opacity 5s ease;
-opacity: 2;
+    transition: width 0.9s ease, opacity 0.9s ease;
+    opacity: 0;
     pointer-events: none;
+    z-index: 999;
 }
+
 .dropdownLink {
     display: block;
-    padding: 4.5px;
-    font-size: 10.2px;
+    padding: 4.5px;      
+    font-size: 10.2px;   
     color: white;
     text-decoration: none;
-    transition: width 1s ease, opacity 1.9s ease;
+    transition: background-color 0.3s ease;
 }
 .dropdownLink:hover {
     background-color: #A8A8A8;
-}
-#linkContainer:hover #dropdownMenu {
-    width: 105px;
-    opacity: 1;
-    pointer-events: auto;
-}
-#linkContainer:hover .dropdownLink {
-    opacity: 1;
 }
 </style>
 
 
 <div id="linkContainer">
-    <a href="in1hakkimda.htm"><img src="w2.jpg" id="Link" alt="Kategoriler" onmouseover="this.src='w02.jpg'" onmouseout="this.src='w2.jpg'"></a>
+    <a href="in1hakkimda.htm">
+        <img src="w2.jpg" id="Link" alt="Kategoriler" onmouseover="this.src='w02.jpg'" onmouseout="this.src='w2.jpg'">
+    </a>
     <div id="dropdownMenu">
         <a href="in1hakkimda.htm" title="Hakkımda" class="dropdownLink">Hakkımda</a>
         <a href="in2projeler.htm" title="Projeler" class="dropdownLink">Projeler</a>
@@ -213,33 +203,34 @@ opacity: 2;
     </div>
 </div>
 
-
 <script>
-let timeoutId;
-const delay = 1000; 
-const dropdownMenu = document.getElementById("dropdownMenu");
-const linkContainer = document.getElementById("linkContainer");
+document.addEventListener("DOMContentLoaded", function() {
+    var timeoutId; 
+    var delay = 1500; 
+    var dropdownMenu = document.getElementById("dropdownMenu");
+    var linkContainer = document.getElementById("linkContainer");
 
-function openMenu() {
-    clearTimeout(timeoutId);
-    dropdownMenu.style.width = "110px";
-    dropdownMenu.style.opacity = "1"; 
-    dropdownMenu.style.pointerEvents = "auto"; 
-}
+    if (!linkContainer || !dropdownMenu) return;
 
-function closeMenu() {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-        dropdownMenu.style.width = "0";
-        dropdownMenu.style.opacity = "0"; 
-        dropdownMenu.style.pointerEvents = "none"; 
-    }, delay); 
-}
+    function openMenu() {
+        clearTimeout(timeoutId);
+        dropdownMenu.style.width = "105px";
+        dropdownMenu.style.opacity = "1"; 
+        dropdownMenu.style.pointerEvents = "auto"; 
+    }
 
+    function closeMenu() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function() {
+            dropdownMenu.style.width = "0";
+            dropdownMenu.style.opacity = "0"; 
+            dropdownMenu.style.pointerEvents = "none"; 
+        }, delay); 
+    }
 
-linkContainer.addEventListener("mouseenter", openMenu);
-linkContainer.addEventListener("mouseleave", closeMenu);
-</script>
+    linkContainer.addEventListener("mouseenter", openMenu);
+    linkContainer.addEventListener("mouseleave", closeMenu);
+});</script>
 
 
 
