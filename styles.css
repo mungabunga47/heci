@@ -31,7 +31,7 @@ body {
 .target {
     position: absolute;
     font-family: calibri, arial;
-    font-size: 22px;
+    font-size: 21px;
     cursor: default;
     text-shadow: 1px 1px 12px silver;
 }
