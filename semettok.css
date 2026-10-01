@@ -41,3 +41,8 @@ body {
   height: 100%;
   display: block;
 }
+html, body {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
