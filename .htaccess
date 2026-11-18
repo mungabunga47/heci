@@ -1,0 +1,32 @@
+
+RewriteEngine On
+RewriteCondition %{HTTPS} off [OR]
+RewriteCondition %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://siteniz.com [L,R=301]
+
+
+Options -Indexes
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-Content-Type-Options "nosniff"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType application/json "access plus 1 hour"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>

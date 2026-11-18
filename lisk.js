@@ -176,3 +176,15 @@ websiteText.addEventListener('mouseout', function() {
 });
 
 startGame();
+
+
+
+
+
+gameArea.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    var rect = gameArea.getBoundingClientRect();
+    var touchX = e.touches[0].clientX - rect.left;
+    paddle.style.left = Math.max(0, Math.min(touchX - paddle.offsetWidth / 2, gameArea.offsetWidth - paddle.offsetWidth)) + 'px';
+}, { passive: false });
+
