@@ -36,7 +36,7 @@
 <table cellpadding="0" cellspacing="0" border="0" align="center">
 	
 <tr>
-		<td width="700" height="529" background="ilk.jpg" style="border: none;>
+		<td width="700" height="529" background="ilk.jpg" style="border: none;">
 
     <div class="coordinate-line horizontal-line"></div>
     <div class="coordinate-line vertical-line"></div>
@@ -212,11 +212,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<link rel="preload" href="w2.jpg" as="image">
+<link rel="preload" href="w02.jpg" as="image">
 
  <link rel="preload" href="xkapali.png" as="image">
  <link rel="preload" href="xacik.png" as="image">
-<link rel="preload" href="w02.jpg" as="image">
-<link rel="preload" href="w2.jpg" as="image">
+
  <a href="in3blog.htm" title="Blog" class="resim"></a>  
     <style>
         .resim {
@@ -298,6 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
 #linkContainer {
     position: relative;
     display: inline-block;
+ z-index: 1000; 
 }
 #Link {
     display: inline-block;
@@ -338,6 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="linkContainer">
     <a href="in1hakkimda.htm">
         <img src="w2.jpg" id="Link" alt="Kategoriler" onmouseover="this.src='w02.jpg'" onmouseout="this.src='w2.jpg'">
+
     </a>
     <div id="dropdownMenu">
         <a href="in1hakkimda.htm" title="Hakkımda" class="dropdownLink">Hakkımda</a>
@@ -538,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </form>
 </div>
 
-<!-- Pop-up Pencere Yapısı -->
+
 <div id="searchPopup" class="popup-overlay" onclick="closePopupOutside(event)">
   <div class="popup-content">
     <button class="close-btn" onclick="closePopup()" title="Kapat">&times;</button>
@@ -547,18 +550,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
-  // Form gönderildiğinde pop-up'ı görünür yapar
+
   function openPopup() {
     document.getElementById('searchPopup').style.display = 'flex';
   }
 
-  // Kapatma butonuna basıldığında pop-up'ı gizler ve içeriği temizler
   function closePopup() {
     document.getElementById('searchPopup').style.display = 'none';
     document.getElementById('popupFrame').src = ''; 
   }
 
-  // Pencerenin dışındaki siyah alana tıklanınca kapatır
   function closePopupOutside(event) {
     if (event.target.id === 'searchPopup') {
       closePopup();
