@@ -1,0 +1,267 @@
+ <html>
+<head>
+<html lang="tr">
+<meta charset="UTF-8">
+<title>IHG-Sitemap</title>
+<link rel="stylesheet" href="semettok.css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<font size="1" class="blue">
+<b><h3>SİTE HARİTASI 🕷️</b></h3>
+<div style="width:230px; height:1px; border-top:1px solid silver; margin: 5px 1px;"></div>
+Site haritası, arama motoru tarayıcılarının web sitemdeki içerikleri kolayca okuyup dizine eklemesini sağlamak ve ziyaretçilerin aradıkları sayfalara hızla ulaşmasına yardımcı olmak amacıyla düzenlenmiştir. Sitemde yer alan tüm bağlantılara aşağıdaki listeden ulaşabilirsiniz.<br><br><br><br>
+
+
+<style>
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn, 
+.button {
+  background-color: #5690b6 !important; 
+  color: #ffffff !important;             
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+.btn:hover, 
+.button:hover {
+  background-color: silver !important; 
+}
+
+</style>
+
+
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #326684;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+       
+        .sitemap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 360px;
+        }
+
+    
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 10px;
+            gap: 25px;
+        }
+
+      
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px; 
+            justify-items: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+       
+        .diamond-node {
+            width: 60px;
+            height: 60px;
+            background-color: #8eb7cb;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s ease;
+            box-shadow: 2px 2px 9px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+
+
+        .diamond-content {
+            transform: rotate(-45deg);
+            text-align: center;
+            color: white;
+            padding: 4px;
+            font-size: 8px;
+            font-weight: bold;           
+            line-height: 1.1;
+        }
+
+
+        .main-root {
+            background-color: #3d759b;
+        }
+        
+        .menu-branch {
+            background-color: #8eb7cb;
+        }
+
+      
+        .diamond-node:hover {
+            background-color: #3d759b;
+            transform: rotate(90deg) scale(1.06);
+      
+        }
+
+        .main-root:hover {
+            background-color: #3c6585;
+        }
+
+      
+        .section-title {
+            font-size: 10px;
+            color: #2c4c64;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+            border-bottom: 1px solid #8eb7cb;
+            padding-bottom: 2px;
+            width: 100px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    </style>
+
+
+  
+        <div class="row">
+            <a href="index.htm" target="_blank" class="diamond-node main-root">
+                <div class="diamond-content">ANASAYFA</div>
+            </a>
+        </div>
+    <div class="sitemap-container">
+      
+            
+
+   
+        <div class="column">
+            <div class="section-title">MENÜ LİNKLERİ</div><br>
+            <div class="grid-2x2">
+               <a href="hakkimda.htm" class="diamond-node">
+                    <div class="diamond-content">Hakkımda</div>
+                </a>
+                <a href="projeler.htm" class="diamond-node">
+                    <div class="diamond-content">Projeler</div>
+                </a>
+             
+                <a href="linkler.htm" class="diamond-node">
+                    <div class="diamond-content">Linkler</div>
+                </a>
+                 <a href="download.htm" class="diamond-node">
+                    <div class="diamond-content">Download</div>
+                </a>
+            </div>
+   <a href="iletisim.htm">
+  <div class="diamond-node menu-branch" style="cursor: default;">
+                <div class="diamond-content">İletişim</div></a>
+            </div>
+            </div>
+        </div>
+<br>
+        
+
+        <div class="column">
+            <div class="section-title">ANA SAYFA LİNKLERİ</div><br>
+            <div class="grid-2x2">
+                <a href="blog.htm" class="diamond-node">
+                    <div class="diamond-content">Blog</div>
+                </a>
+                <a href="gizlilik.htm" class="diamond-node">
+                    <div class="diamond-content">Gizlilik</div>
+                </a>
+             
+                <a href="english.htm" class="diamond-node">
+                    <div class="diamond-content">English</div>
+                </a>
+                  <a href="arama.htm" target="_blank" class="diamond-node">
+                    <div class="diamond-content">Arama</div>
+                </a>
+            </div>
+
+   <a href="sitemap.htm"> <div class="diamond-node main-root">
+  
+                <div class="diamond-content">Site Haritası</div></a>
+            </div>
+        </div>
+  
+
+</body>
+
+
+<br>
+<br>
+
+
+
+ <script> let dingPlayed = false; document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("Erişim Engellendi!"); if (!dingPlayed) { new Audio('accessdenied.mp3').play().catch(()=>{}); dingPlayed = false; } }); </script>
+
+<br><br>
+ <button type="button" class="btn" onclick="history.back();">◄</button>
+
+<style>
+a {
+    color: #326684;
+    text-decoration: none; 
+}
+a:hover {
+    color: #6394AF;
+}
+</style>
+
+<script>
+  
+  if (window.self === window.top) {
+  
+    window.location.href = "in9sitemap.htm";
+  }
+</script>
+<button onclick="yukariCik()" id="ustButon" style="
+  position: fixed; 
+  bottom: 10px; 
+  right: 10px; 
+  padding: 8px 9px; 
+  font-size: 7px; 
+  cursor: pointer;
+ border-radius: 20px;
+   z-index: 999999 !important;
+">
+  ▲
+</button>
+
+<script>
+function yukariCik() {
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+</script>
+
+</head>
+</font>
+</body>

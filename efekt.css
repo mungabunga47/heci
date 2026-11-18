@@ -1,0 +1,33 @@
+
+.menu-fade-container {
+    position: relative !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+.menu-base-img {
+    position: relative !important;
+    display: block !important;
+    z-index: 1 !important;
+}
+
+
+.menu-overlay-img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    transition: opacity 0.5s ease-in-out !important; 
+}
+
+
+.menu-fade-container:hover .menu-overlay-img {
+    opacity: 1 !important;
+}
